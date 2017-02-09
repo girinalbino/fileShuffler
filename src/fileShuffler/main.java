@@ -10,6 +10,8 @@ import java.util.Random;
 public class main {
 
 	public static void main(String[] args) {
+		boolean debug = true;
+		
 		String folderName = "D:" + File.separator + "projetos" + File.separator + "workspaces" + File.separator
 				+ "fileScrabbler" + File.separator + "teste";
 
@@ -81,9 +83,10 @@ public class main {
 
 				System.out.println(novoNome);
 
-				File novoArquivo = new File(folderName + File.separator + novoNome);
-				arquivoOriginal.renameTo(novoArquivo);
-
+				if (!debug){
+					File novoArquivo = new File(folderName + File.separator + novoNome);
+					arquivoOriginal.renameTo(novoArquivo);
+				}
 				i++;
 			}
 		}
